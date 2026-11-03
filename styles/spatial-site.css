@@ -1,0 +1,81 @@
+/* Spatial Index is the selected site layout. The two other studies stay separate. */
+.direction-spatial { --gutter:clamp(20px,3.1vw,40px); width:100%; max-width:1360px; margin-inline:auto; }
+.spatial-site { padding-top:0; }
+.spatial-site .direction-nav { top:0; }
+.spatial-site .direction-rail { top:118px; }
+.spatial-site .direction-index-content .direction-section,
+.spatial-site .direction-capabilities #production { scroll-margin-top:18px; }
+.direction-spatial .direction-index-layout { scroll-margin-top:22px; }
+.spatial-film-intro { padding:22px var(--gutter) 0; }
+.spatial-film-intro>p { font-size:10px; margin:0 0 24px; }
+.opening-film { position:relative; width:100%; max-width:1280px; aspect-ratio:16/9; margin-inline:auto; background:var(--paper); }
+.opening-film video { display:block; width:100%; max-width:1280px; height:auto; aspect-ratio:16/9; object-fit:contain; }
+.opening-film-error { position:absolute; bottom:20px; left:20px; padding:14px; background:var(--paper); font-size:14px; }
+.opening-film-error a { text-decoration:underline; }
+.direction-spatial .direction-proposition { display:grid; grid-template-columns:minmax(0,.85fr) repeat(2,minmax(0,1fr)); gap:20px clamp(24px,4vw,72px); padding-top:32px; padding-bottom:52px; align-items:center; }
+.direction-spatial .direction-proposition-heading { grid-column:1/3; }
+.direction-spatial .spatial-proposition-mascot { grid-column:3; grid-template-columns:minmax(0,1fr); justify-items:start; padding:0; }
+.doppl-system .direction-spatial .spatial-proposition-mascot .hero-mascot { max-width:100%; }
+.direction-spatial .spatial-proposition-copy { grid-column:2/4; display:grid; grid-template-columns:subgrid; align-self:start; padding-top:28px; border-top:1px solid var(--direction-rule); }
+.spatial-proposition-copy p { font-size:19px; line-height:1.55; color:#d9cce4; }
+.spatial-proposition-copy p+p { margin-top:22px; }
+.spatial-proposition-copy .direction-text-link { margin-top:24px; gap:20px; }
+
+/* One bounded optical field per section. No tiling or stretching on wide screens. */
+.spatial-textured .direction-opening,
+.spatial-textured .direction-index-content>.direction-section,
+.spatial-textured .direction-capabilities,
+.spatial-textured .site-contact { position:relative; isolation:isolate; }
+.spatial-textured .direction-opening:before,
+.spatial-textured .direction-index-content>.direction-section:before,
+.spatial-textured .direction-capabilities:before,
+.spatial-textured .site-contact:before { content:''; position:absolute; z-index:-1; inset:0; pointer-events:none; background:url('/optical/approved-combined.svg') center/1280px 800px no-repeat; opacity:.045; mask-image:radial-gradient(ellipse closest-side,#000 45%,transparent 100%); }
+.spatial-textured .direction-opening:before { top:auto; height:900px; max-height:100%; opacity:.065; }
+.spatial-textured .direction-studio:before { background-position:60% center; }
+.spatial-textured .site-contact:before { opacity:.07; }
+
+/* 1280px of content plus 40px gutters. Beyond this frame, only margins grow. */
+@media(min-width:1360px) {
+ .direction-spatial { --direction-space:108.8px; --home-space:95.2px; }
+ .direction-spatial .direction-proposition { column-gap:54.4px; }
+ .direction-spatial .direction-proposition h1 { font-size:87.04px; }
+ .direction-spatial .direction-index-layout { column-gap:54.4px; }
+ .direction-spatial .direction-index-content h2 { font-size:73.44px; }
+ .direction-spatial .direction-engagement-passage h3 { font-size:46.24px; }
+ .direction-spatial .direction-studio-intro { font-size:40.8px; }
+ .direction-spatial .production-intro { font-size:19.72px; }
+ .direction-spatial .production-card-number { font-size:58.48px; }
+ .direction-spatial .production-jobs li { font-size:19.04px; }
+ .direction-spatial .site-contact h2 { font-size:92.48px; }
+ .direction-spatial .site-contact-heading p { font-size:20.4px; }
+ .direction-spatial .site-contact-email { font-size:88.4px; }
+}
+
+.cursor-echo { position:fixed; inset:0; z-index:90; pointer-events:none; overflow:hidden; opacity:0; transition:opacity .22s ease-out; }
+.cursor-echo[data-active=true] { opacity:1; transition-duration:.06s; }
+.cursor-echo>span { position:absolute; top:0; left:0; width:15px; height:20px; color:#e2cef3; opacity:.3; }
+.cursor-echo>span+span { opacity:.13; }
+.cursor-echo svg { display:block; width:100%; height:100%; }
+
+@media(max-width:800px) {
+ .spatial-site .direction-rail { top:auto; }
+ .spatial-film-intro { padding-top:20px; }
+ .spatial-film-intro>p { font-size:9px; margin-bottom:20px; }
+ .direction-spatial .direction-proposition { grid-template-columns:minmax(0,1fr) clamp(80px,27%,180px); gap:24px 16px; padding-top:24px; padding-bottom:35px; }
+ .direction-spatial .direction-proposition-heading { grid-column:1; grid-row:1; }
+ .direction-spatial .direction-proposition h1 { font-size:clamp(34px,9.4vw,64px); white-space:normal; }
+ .direction-spatial .direction-title-word:first-child,
+ .direction-spatial .direction-title-word:last-child { display:block; }
+ .direction-spatial .spatial-proposition-mascot { grid-column:2; grid-row:1; justify-items:center; }
+ /* The mascot shares the headline row and scales with the masthead content width. */
+ .doppl-system .direction-spatial .spatial-proposition-mascot .hero-mascot { width:100%; }
+ .direction-spatial .spatial-proposition-copy { grid-column:1/-1; grid-template-columns:1fr 1fr; gap:24px; padding-top:24px; }
+ .spatial-proposition-copy p { font-size:17px; }
+ .spatial-textured .direction-opening:before { opacity:.045; }
+ .spatial-textured .direction-index-content>.direction-section:before,
+ .spatial-textured .direction-capabilities:before { opacity:.035; }
+}
+@media(max-width:520px) {
+ .direction-spatial .spatial-proposition-copy { grid-template-columns:1fr; }
+}
+@media(pointer:coarse),(prefers-reduced-motion:reduce) { .cursor-echo { display:none; } }

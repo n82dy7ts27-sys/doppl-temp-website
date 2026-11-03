@@ -1,0 +1,61 @@
+.production-services { border-top:1px solid var(--line); }
+.production-services .home-section-heading { margin-bottom:26px; }
+.production-intro { max-width:680px; margin-bottom:38px; color:var(--muted); font-size:clamp(18px,1.45vw,22px); line-height:1.5; text-wrap:pretty; }
+.production-cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-areas:'film imagery' 'worlds hybrid'; gap:18px; align-items:stretch; }
+.production-card { position:relative; --card-pad:clamp(24px,2.4vw,38px); min-width:0; display:flex; flex-direction:column; border:1px solid var(--line); background:color-mix(in srgb,var(--acid) 2%,transparent); transition:background-color .25s,border-color .25s; scroll-margin-top:24px; }
+.production-card[data-service='film'] { grid-area:film; }
+.production-card[data-service='imagery'] { grid-area:imagery; }
+.production-card[data-service='worlds'] { grid-area:worlds; }
+.production-card[data-service='hybrid'] { grid-area:hybrid; }
+.production-card:hover { border-color:color-mix(in srgb,var(--acid) 60%,transparent); }
+.production-card[data-open='true'] { background:color-mix(in srgb,var(--acid) 7%,var(--black)); border-color:color-mix(in srgb,var(--acid) 55%,transparent); }
+.production-card > h3 { flex:1; display:flex; }
+.production-card-trigger { display:flex; flex-direction:column; justify-content:space-between; gap:38px; width:100%; min-height:280px; padding:var(--card-pad); text-align:left; border:0; background:transparent; }
+.production-card-trigger:focus-visible { outline:2px solid var(--acid); outline-offset:-6px; }
+.production-card-top { display:flex; justify-content:space-between; align-items:center; gap:20px; width:100%; color:var(--acid); }
+.production-card-number { font-size:clamp(42px,4.3vw,64px); line-height:.9; letter-spacing:-.06em; opacity:.65; }
+.production-card-chevron { transition:transform .25s; }
+.production-card[data-open='true'] .production-card-chevron { transform:rotate(180deg); }
+.production-card-content { display:flex; flex-direction:column; align-items:flex-start; }
+.production-card-title { font-size:clamp(26px,2.3vw,36px); line-height:1.1; letter-spacing:-.035em; }
+.production-card-summary { max-width:420px; margin-top:12px; color:var(--muted); font-size:16px; line-height:1.45; text-wrap:pretty; }
+.production-card-hint { margin-top:24px; font-size:10px; color:var(--muted); }
+.production-card[data-open='true'] > h3 { flex:0; }
+.production-card[data-open='true'] .production-card-trigger { min-height:0; gap:24px; padding-bottom:26px; }
+.production-card-detail { position:relative; padding:0 var(--card-pad) var(--card-pad); }
+.production-jobs-label { margin:0 0 15px; font-size:10px; color:var(--muted); font-weight:400; }
+.production-jobs { display:grid; grid-template-columns:1fr 1fr; gap:0 28px; list-style:none; padding:0; margin:0; }
+.production-jobs li { padding:15px 0; border-top:1px solid var(--line); font-size:clamp(16px,1.4vw,21px); line-height:1.3; letter-spacing:-.015em; text-wrap:pretty; }
+.production-enquiry { margin-top:18px; }
+.selected-work .home-section-heading { margin-bottom:0; }
+@media(min-width:851px) {
+  /* Keep paired titles and summaries aligned even when descriptions wrap differently. */
+  .production-cards[data-active='none'] .production-card-trigger { justify-content:flex-start; }
+  .production-cards[data-active='none'] .production-card-content { flex:1; }
+  .production-cards[data-active='none'] .production-card-hint { margin-top:auto; padding-top:24px; }
+  .production-cards[data-active='film'] { grid-template-columns:2fr 1fr; grid-template-areas:'film imagery' 'film worlds' 'film hybrid'; }
+  .production-cards[data-active='imagery'] { grid-template-columns:1fr 2fr; grid-template-areas:'film imagery' 'worlds imagery' 'hybrid imagery'; }
+  .production-cards[data-active='worlds'] { grid-template-columns:1fr 2fr; grid-template-areas:'film worlds' 'imagery worlds' 'hybrid worlds'; }
+  .production-cards[data-active='hybrid'] { grid-template-columns:1fr 2fr; grid-template-areas:'film hybrid' 'imagery hybrid' 'worlds hybrid'; }
+  .production-cards:not([data-active='none']) .production-card[data-open='false'] .production-card-trigger { min-height:230px; gap:25px; }
+  .production-cards:not([data-active='none']) .production-card[data-open='false'] .production-card-number { font-size:40px; }
+}
+@media(max-width:1000px) {
+  .production-card { position:relative; --card-pad:24px; }
+  .production-card-title { font-size:27px; }
+  .production-card-summary { font-size:15px; }
+}
+@media(max-width:850px) {
+  .production-cards { grid-template-columns:1fr; grid-template-areas:'film' 'imagery' 'worlds' 'hybrid'; gap:14px; }
+  .production-card-trigger { min-height:190px; gap:24px; }
+  .production-card-number { font-size:42px; }
+  .production-card-hint { margin-top:18px; }
+  .production-card-summary { max-width:none; }
+}
+@media(max-width:540px) {
+  .production-intro { font-size:17px; margin-bottom:28px; }
+  .production-card { position:relative; --card-pad:22px; }
+  .production-jobs { grid-template-columns:1fr; }
+  .production-jobs li { padding:12px 0; font-size:18px; }
+}
+@media(prefers-reduced-motion:reduce) { .production-card-detail:not([hidden]) { animation:none; } }

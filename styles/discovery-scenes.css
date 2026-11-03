@@ -1,0 +1,105 @@
+/* Distinct optical families, composed as full fields, portraits and friezes. */
+.discovery-scene{position:relative;width:100%;min-width:0;margin:0;color:var(--white)}
+.discovery-scene-track{position:relative}
+.discovery-scene-stage{position:relative;overflow:hidden;isolation:isolate;background:#100b1b}
+.discovery-scene-stage .optical-field{width:100%;height:100%;aspect-ratio:auto}
+.discovery-scene-labels{position:absolute;inset:28px var(--gutter) auto;display:flex;justify-content:space-between;gap:28px;pointer-events:none;font-size:12px;line-height:1.45;text-transform:uppercase;letter-spacing:.025em}
+.discovery-scene-labels>span{display:flex;align-items:center;gap:10px;max-width:45%;text-shadow:0 1px 8px #100b1b,0 0 18px #100b1b}
+.discovery-scene-labels>span:last-child{text-align:right;justify-content:flex-end}
+.discovery-scene-labels i{width:4px;height:4px;flex-shrink:0;background:#c0a8dd}
+.discovery-scene--wide .discovery-scene-track{height:165svh}
+.discovery-scene--wide .discovery-scene-stage{position:sticky;top:0;height:100svh}
+.discovery-scene-caption{display:grid;grid-template-columns:1.5fr .75fr;align-items:end;gap:12%;padding:45px var(--gutter) 80px}
+.discovery-scene-caption p{margin:0;font-size:clamp(40px,4.8vw,74px);line-height:1.02;letter-spacing:-.055em;font-weight:450}
+.discovery-caption-detail{max-width:330px;font-size:17px;line-height:1.5;color:var(--muted);padding-bottom:5px}
+.discovery-scene-caption--detail-only{grid-template-columns:1fr;padding-block:30px 45px}
+.discovery-scene-caption--detail-only .discovery-caption-detail{max-width:none;padding-bottom:0}
+.doppl-system .difference-section .value-grid{padding-top:35px}
+
+/* The point of view and optical field now form one editorial page fold. */
+.discovery-scene--statement .discovery-scene-stage{height:auto;min-height:100svh}
+.discovery-scene--statement .discovery-scene-stage>.optical-field{position:absolute;inset:0;z-index:0}
+.discovery-scene--statement .discovery-scene-stage:after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:rgba(16,11,27,.58)}
+.discovery-scene-overlay{position:relative;z-index:2;display:flex;flex-direction:column;min-height:100svh;color:var(--white);cursor:crosshair}
+.doppl-system .discovery-scene-overlay .section-label{margin-bottom:0;border-color:#e7d8f44d}
+.doppl-system .discovery-scene-overlay .section-label-aside,.doppl-system .discovery-scene-overlay .section-label>span:last-child{color:#e9dff1}
+.point-of-view-copy{flex:1;display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);align-items:end;gap:9%;padding:clamp(55px,9vh,110px) var(--gutter) 65px}
+.point-of-view-heading>.mono{display:block;margin-bottom:32px;font-size:12px;letter-spacing:.04em;color:#ece2f5}
+.point-of-view-heading h2{font-size:clamp(64px,7.4vw,120px);line-height:.99;letter-spacing:-.065em;font-weight:450;text-wrap:balance}
+.point-of-view-emphasis{display:block;color:#e4c6f5}
+.point-of-view-copy>p{max-width:340px;padding-bottom:7px;font-size:clamp(18px,1.65vw,23px);line-height:1.48;color:#fbf8ff;text-wrap:pretty}
+.point-of-view-footnote{margin:0 var(--gutter);padding:25px 0 29px;border-top:1px solid #e7d8f44d;font-size:12px;color:#ece2f5}
+.doppl-system .difference-section:has(.discovery-scene--statement) .value-grid{padding-top:65px}
+
+.doppl-system .work-grid--collection{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding-bottom:90px}
+.doppl-system .work-grid--collection .work-card{min-width:0;grid-column:auto}
+.doppl-system .work-grid--collection .work-card:nth-child(2){padding-top:100px}
+.doppl-system .work-grid--collection .work-card .optical-field{aspect-ratio:4/5}
+.doppl-system .work-grid--collection .work-caption{flex-direction:column;align-items:flex-start;gap:10px}
+.doppl-system .work-grid--collection .work-caption h3{font-size:clamp(24px,2.25vw,34px)}
+.doppl-system .work-grid--collection .work-summary{font-size:16px;max-width:355px}
+
+.doppl-system .commission-intro--discovery{grid-template-columns:1fr 1.05fr;gap:6%;align-items:stretch;padding-top:65px;padding-bottom:75px}
+.commission-editorial{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding-block:30px}
+.commission-kicker{display:block;color:var(--muted);font-size:12px;line-height:1.5;max-width:310px;margin-bottom:38px}
+.doppl-system .commission-editorial h2{font-size:clamp(40px,4.3vw,66px)}
+.doppl-system .commission-editorial p{margin-top:32px;font-size:18px}
+.commission-intro--discovery .discovery-scene{width:auto;margin-right:calc(var(--gutter) * -1)}
+.discovery-scene--portrait .discovery-scene-stage{height:clamp(580px,48vw,760px)}
+.discovery-scene--portrait .discovery-scene-labels{inset-inline:26px;font-size:12px}
+.discovery-scene--frieze{margin-top:40px}
+.discovery-scene--frieze .discovery-scene-stage{height:clamp(320px,34vw,500px)}
+.doppl-system .founder--profile{display:grid;grid-template-columns:58px 1fr;gap:15px;align-items:start;padding:26px 0 0;border-top:1px solid var(--line)}
+.founder-index{font-size:13px;color:var(--muted);padding-top:5px}
+.doppl-system .founder--profile .founder-caption{display:block;margin:0}
+.doppl-system .founder--profile .founder-caption h3{font-size:24px}
+.doppl-system .founder--profile .founder-caption .mono{display:block;margin-top:12px}
+.doppl-system .studio-side-note{padding-top:26px;border-top:1px solid var(--line)}
+
+@media(max-width:1000px){
+ .discovery-scene-caption{grid-template-columns:1.2fr .8fr;gap:7%}
+ .discovery-scene-caption p{font-size:44px}
+ .discovery-caption-detail{font-size:16px}
+ .doppl-system .commission-intro--discovery{gap:4%}
+ .doppl-system .commission-editorial h2{font-size:4.6vw}
+ .discovery-scene--portrait .discovery-scene-labels{inset-inline:20px;font-size:12px;gap:18px}
+ .doppl-system .work-grid--collection{gap:20px}
+ .doppl-system .work-grid--collection .work-card:nth-child(2){padding-top:60px}
+}
+@media(max-width:700px){
+ .discovery-scene--statement .discovery-scene-stage,.discovery-scene-overlay{min-height:max(100svh,720px)}
+ .point-of-view-copy{grid-template-columns:1fr;align-content:center;gap:36px;padding:55px var(--gutter) 45px}
+ .point-of-view-heading>.mono{font-size:11px;margin-bottom:26px}
+ .point-of-view-heading h2{font-size:clamp(49px,12.4vw,82px);line-height:1.02;letter-spacing:-.06em}
+ .point-of-view-copy>p{font-size:18px;max-width:390px;padding:0}
+ .point-of-view-footnote{font-size:10px;line-height:1.6;padding-block:21px 26px}
+ .doppl-system .difference-section:has(.discovery-scene--statement) .value-grid{padding-top:40px}
+ .discovery-scene-labels{top:24px;font-size:12px;gap:18px}
+ .discovery-scene-labels>span{align-items:flex-start;gap:7px}
+ .discovery-scene-labels i{margin-top:6px}
+ .discovery-scene-caption{grid-template-columns:1fr;gap:25px;padding-block:30px 50px}
+ .discovery-scene-caption p{font-size:clamp(34px,7vw,46px)}
+ .discovery-caption-detail{max-width:340px;font-size:16px}
+ .doppl-system .work-grid--collection{grid-template-columns:1fr;gap:40px;padding-bottom:65px}
+ .doppl-system .work-grid--collection .work-card:nth-child(2){padding-top:0}
+ .doppl-system .work-grid--collection .work-card .optical-field{aspect-ratio:4/3}
+ .doppl-system .work-grid--collection .work-caption h3{font-size:27px}
+ .doppl-system .commission-intro--discovery{grid-template-columns:1fr;padding-top:30px;padding-bottom:40px;gap:15px}
+ .commission-editorial{padding-block:0 15px}
+ .commission-kicker{margin-bottom:25px}
+ .doppl-system .commission-editorial h2{font-size:clamp(35px,7.8vw,48px)}
+ .doppl-system .commission-editorial p{margin-top:25px}
+ .commission-intro--discovery .discovery-scene{margin-inline:calc(var(--gutter) * -1)}
+ .discovery-scene--portrait .discovery-scene-stage{height:550px}
+ .discovery-scene--portrait .discovery-scene-labels{inset-inline:var(--gutter)}
+ .discovery-scene--frieze{margin-top:24px}
+ .discovery-scene--frieze .discovery-scene-stage{height:340px}
+ .doppl-system .founder--profile{grid-template-columns:1fr;gap:20px;padding-top:20px}
+ .doppl-system .founder--profile .founder-caption h3{font-size:20px}
+ .doppl-system .studio-side-note{margin-top:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ .discovery-scene--wide .discovery-scene-track{height:auto}
+ .discovery-scene--wide .discovery-scene-stage{position:relative;height:75svh;min-height:440px}
+ .discovery-scene--statement .discovery-scene-stage{height:auto;min-height:100svh}
+}

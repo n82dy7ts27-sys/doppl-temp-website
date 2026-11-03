@@ -1,0 +1,26 @@
+/* Echo is confined to the signature band. Reading surfaces stay still. */
+.echo-system { --echo-outer:#9973ce; --echo-middle:#b98ade; --echo-inner:#e3b4ec; }
+.echo-system .opening-signature { isolation:isolate; }
+.echo-system .opening-descriptor { z-index:2; pointer-events:none; }
+.echo-system .mascot-echo {
+ --echo-x:0; --echo-y:0; --echo-open:0; --echo-step:clamp(58px,7.4vw,106px);
+ position:relative; isolation:isolate; outline-offset:-10px;
+}
+.echo-system .mascot-echo:focus-visible { outline:1px solid var(--acid); }
+.echo-system .mascot-echo-family { position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+.echo-system .mascot-echo-pose {
+ position:absolute; top:50%; left:50%; width:300px; aspect-ratio:1;
+ margin:-150px 0 0 -150px; background:var(--pose-colour); opacity:var(--pose-opacity);
+ mask:var(--pose-image) center / contain no-repeat;
+ transform:translate(calc(var(--slot) * var(--echo-step) + var(--echo-x) * var(--drift) + var(--echo-open) * var(--spread)),calc(var(--pose-y) + var(--echo-y) * 12px)) rotate(var(--pose-angle)) scale(var(--pose-size));
+}
+.echo-system .opening-intro h1:before,.echo-system .opening-copy:before { display:none; }
+.echo-system .reel-reserve-art { background:none; }
+@media(max-width:700px) {
+ .echo-system .mascot-echo { --echo-step:clamp(48px,17vw,68px); }
+ .echo-system .mascot-echo-pose { --pose-size:.78!important; --pose-angle:0deg!important; --pose-opacity:.6!important; }
+ .echo-system .mascot-echo-pose--2,.echo-system .mascot-echo-pose--3 { display:none; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .echo-system .mascot-echo { --echo-x:0!important; --echo-y:0!important; --echo-open:0!important; }
+}

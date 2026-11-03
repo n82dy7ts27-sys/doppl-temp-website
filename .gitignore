@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+dist/
+__pycache__/
+.env*
+!.env.example
+*.tsbuildinfo
+.sites-runtime/
+.DS_Store
+.wrangler/
+.venv/
+copy-handoff/
+*.log

@@ -1,0 +1,31 @@
+{
+  "ground": "#100b1b",
+  "palettes": {
+    "spectrum": [
+      { "offset": 0, "color": "#49428f" },
+      { "offset": 0.22, "color": "#8961c5" },
+      { "offset": 0.46, "color": "#d99ce0" },
+      { "offset": 0.59, "color": "#e7c7f0" },
+      { "offset": 0.78, "color": "#9566cb" },
+      { "offset": 1, "color": "#514797" }
+    ],
+    "opening": [
+      { "offset": 0, "color": "#3b326b" },
+      { "offset": 0.24, "color": "#72539d" },
+      { "offset": 0.47, "color": "#af7aba" },
+      { "offset": 0.6, "color": "#baa0d0" },
+      { "offset": 0.8, "color": "#7954a3" },
+      { "offset": 1, "color": "#453974" }
+    ]
+  },
+  "compositions": {
+    "origin": { "source": "/optical/approved-combined.svg", "rotation": 0, "zoom": 1, "phase": 0, "palette": "opening", "angle": 115 },
+    "belief": { "source": "/optical/ribbons-combined.svg", "rotation": 0, "zoom": 1, "phase": 0.12, "palette": "spectrum", "angle": 130 },
+    "work": { "source": "/optical/contours-combined.svg", "rotation": 0, "zoom": 1, "phase": 0.22, "palette": "spectrum", "angle": 55 },
+    "capabilities": { "source": "/optical/petals-combined.svg", "rotation": 0, "zoom": 1.08, "phase": 0.32, "palette": "spectrum", "angle": 145 },
+    "ways": { "source": "/optical/chevrons-combined.svg", "rotation": 0, "zoom": 1, "phase": 0.42, "palette": "spectrum", "angle": 30 },
+    "process": { "source": "/optical/contours-combined.svg", "rotation": 1.5707963268, "zoom": 1.18, "phase": 0.52, "palette": "spectrum", "angle": 155 },
+    "studio": { "source": "/optical/petals-combined.svg", "rotation": 0, "zoom": 1, "phase": 0.62, "palette": "spectrum", "angle": 75 },
+    "contact": { "source": "/optical/ribbons-combined.svg", "rotation": 1.5707963268, "zoom": 1.1, "phase": 0.72, "palette": "spectrum", "angle": 140 }
+  }
+}
